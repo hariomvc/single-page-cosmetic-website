@@ -49,7 +49,96 @@ function Catalogue() {
   }, []);
   return (
     <div>
-      {products.length > 0 &&
+                    <input
+              type="text"
+              name="search"
+              placeholder="Search cosmetic across brands"
+              className="Header--search--input"
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setResult(false);
+                setresultnyx(false);
+                setresultdior(false);
+                setresultclinique(false);
+              }}
+            />
+            <select
+                onChange={(event) => {
+                  setSorter(event.target.value);
+                }}
+                className="Header--sort--select"
+              >
+                <option value="rating">Rating</option>
+                <option value="price">Price</option>
+              </select>
+              {query != "" && (
+          <div>
+            {() => setBrand("")}
+            <div>
+              {() => setBrand(0)}
+              {brands.map((Brand) => (
+                <div>
+                  {((Brand.id == 1 && resultnyx) ||
+                    (Brand.id == 2 && resultdior) ||
+                    (Brand.id == 3 && resultclinique)) && (
+                    <div className="Catalogue--brand--row">{Brand.name}</div>
+                  )}
+                  <div className="Catalogue--grid">
+                    {products.length > 0 &&
+                      products
+                        .filter((product) => {
+                          if (
+                            product.name
+                              .toLowerCase()
+                              .includes(query.toLowerCase()) &&
+                            Brand.name == product.brand
+                          ) {
+                            if (!result) {
+                              setResult(true);
+                            }
+                            if (product.brand == "nyx" && !resultnyx) {
+                              setresultnyx(true);
+                            } else if (product.brand == "dior" && !resultdior) {
+                              setresultdior(true);
+                            } else if (
+                              product.brand == "clinique" &&
+                              !resultclinique
+                            ) {
+                              setresultclinique(true);
+                            }
+                            return product;
+                          }
+                        })
+                        .map((product) => (
+                          <div>
+                            {() => setResult(true)}
+                            {result && (
+                              <Card
+                                brand={product.brand}
+                                name={product.name}
+                                price={product.price}
+                                image={product.image_link}
+                                link={product.product_link}
+                                description={product.description}
+                                rating={product.rating}
+                                currency={product.price_sign}
+                              />
+                            )}
+                          </div>
+                        ))}
+                  </div>
+                </div>
+              ))}
+              {!result && (
+                <div className="no-result--container">
+                  <span className="no-result--text">No Results Found.</span>
+                  <span className="no-result--text">We can't find any matches for "{query}".</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      {/* {products.length > 0 &&
         products.map((product) => (
           <div>
             <Card
@@ -63,7 +152,7 @@ function Catalogue() {
               currency={product.price_sign}
             />
           </div>
-        ))}
+        ))} */}
     </div>
   );
 }
