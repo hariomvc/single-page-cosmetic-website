@@ -41,15 +41,12 @@ function Catalogue() {
           data.map((product) => newdata.push(product));
           if (Brand.name === "nyx") {
             setProductsnyx(data.length);
-            console.log(data.length);
             setProducts(newdata);
           } else if (Brand.name === "dior") {
             setProductsdior(data.length);
-            console.log(data.length);
             setProducts(newdata);
           } else if (Brand.name === "clinique") {
             setProductsclinique(data.length);
-            console.log(data.length);
             setProducts(newdata);
           }
         });

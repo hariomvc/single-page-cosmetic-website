@@ -1,4 +1,5 @@
 import Catalogue from "./Components/Catalogue/Catalogue";
+import Product from "./Components/Product/Product";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,16 +7,6 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-
-function Test(){
-  let { id } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {id}</h3>
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -26,7 +17,7 @@ function App() {
         <Catalogue/>
           </Route>
           <Route path="/:id">
-            <Test/>
+            <Product/>
             </Route>
         </Switch>
       </Router>
