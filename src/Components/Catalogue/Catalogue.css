@@ -1,0 +1,149 @@
+.fixed-top{
+    position: sticky;
+    top: 0;
+}
+
+.Catalogue--container {
+    margin: 1%;
+    padding: 1%;
+    border: 0.1em solid #1f1f1f;
+    border-radius: 0.5em;
+    height: 90vh;
+    overflow: auto;
+    padding-top: 0;
+}
+
+.Catalogue--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+}
+
+.Catalogue--brandbox {
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: 20% 20% 20%;
+    grid-template-rows: max-content;
+
+}
+
+.Catalogue--brand {
+    text-align: center;
+    padding: 0.4em 1.4em;
+    font-family: 'Roboto Slab', serif;
+    background-color: #fff;
+    border: none;
+    color: #767676;
+    font-size: 1.2em;
+    margin: 0 1em;
+    width: 100%;
+}
+
+.Catalogue-brand-selected{
+    color: blue;
+    border-bottom: 0.2em solid blue;
+}
+
+.Catalogue--brand--row{
+    background-color: #ededed;
+    padding: 0.4em 1em;
+    border-radius: 0.2em;
+    border: 0.1em solid #767676;
+    color: #1f1f1f;
+}
+
+/* Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1em;
+    display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dedede;
+    border-radius: 1em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #cdcdcd;
+    border-radius: 1em;
+}
+
+/* Header Container */
+.Header--container {
+    border-bottom: 0.1em solid #cdcdcd;
+    padding: 1em 0;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.Header--search--container {
+    border: 0.1em solid #dedede;
+    display: inline-block;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    justify-content: center;
+}
+
+.Header--search--icon {
+    height: 1.5em;
+    margin: auto 0;
+}
+
+.Header--close--icon {
+    height: 1.5em;
+    margin: auto 0;
+    float: right;
+}
+
+.Header--search--input {
+    margin-left: 0.5em;
+    border: none;
+    height: 1.5em;
+    outline: none;
+    font-size: 1.25em;
+    width: 40vw;
+}
+
+.Header--sort--container {
+    float: right;
+    padding: auto 1em;
+}
+
+.Header--sort--text{
+    font-size: 1.5em;
+    color: #cdcdcd;
+    margin-right: 0.5em;
+}
+
+.Header--sort--select{
+    font-size: 1.5em;
+    background-color: #f1f1f1;
+    color: #676767;
+    border-radius: 0.2em;
+}
+
+/* No Result */
+.no-result--container{
+    text-align: center;
+}
+
+.no-result--image{
+    display: block;
+    margin: 1em auto;
+}
+
+.no-result--text{
+    display: block;
+    color: #767676;
+}
