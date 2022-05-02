@@ -208,6 +208,7 @@ function Catalogue() {
                                 description={product.description}
                                 rating={product.rating}
                                 currency={product.price_sign}
+                                id={product.id}
                               />
                             )}
                           </div>
@@ -279,6 +280,7 @@ function Catalogue() {
                     description={product.description}
                     rating={product.rating}
                     currency={product.price_sign}
+                    id={product.id}
                   />
                 ))}
           </div>

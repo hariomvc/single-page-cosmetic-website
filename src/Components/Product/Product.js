@@ -1,5 +1,6 @@
 import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
+import './Product.css';
 
 function Product() {
   let { id } = useParams();
@@ -17,12 +18,15 @@ function Product() {
   }, []);
 
   return (
-    <div>
-      <img src={product.image_link} alt="Prodcuts Image" className="" />
-      <span>{product.name}</span>
-      <span>{product.price_sign} {product.price}</span>
-      {product.rating>0 && <span>Rating: {product.rating}</span>}
-      <span>{product.description}</span>
+    <div className="Product--container">
+      <img src={product.image_link} alt="Prodcuts Image" className="Product--image" />
+      <div className="Product--detials">
+      <span className="Product--title">{product.name}</span>
+      <span className="Product--subtitle">{product.price_sign} {product.price}</span>
+      {product.rating>0 && <span className="Product--subtitle">Rating: {product.rating}</span>}
+      <span className="Product--description">{product.description}</span>
+      <a href={product.product_link} className="Product--link" target='_blank' >Buy Now!</a>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,44 @@
+.Product--container{
+    display: block;
+    width: 95vw;
+    height: 90vh;
+    border: 0.1em solid #cdcdcd;
+    background-color: #fefefe;
+    margin: 5vh auto;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.Product--image{
+    float: left;
+}
+
+.Product--detials{
+    margin: 2em;
+}
+
+.Product--title{
+    font-size: 1.6em;
+    display: block;
+    font-weight: 700;
+}
+
+.Product--subtitle{
+    font-size: 1.2em;
+    color: #767676;
+    display: block;
+}
+
+.Product--description{
+    display: block;
+    margin-bottom: 2em;
+}
+
+.Product--link{
+    background-color: #767676;
+    color: #fff;
+    border: 1px solid #1f1f1f;
+    border-radius: 0.2em;
+    font-size: 1.2em;
+    padding: 0.4em;
+}
