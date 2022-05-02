@@ -1,6 +1,7 @@
 import "./Catalogue.css";
 import React, { useEffect, useState } from "react";
 import Card from "./Card/Card";
+import Loader from "./Loader/Loader";
 
 function Catalogue() {
   const brands = [
@@ -23,6 +24,7 @@ function Catalogue() {
   const [brand, setBrand] = useState("");
 
   const [sorter, setSorter] = useState("");
+  const [loaded, setLoaded] = useState(false);
 
   const [products, setProducts] = useState([]);
   const [productsnyx, setProductsnyx] = useState(0);
@@ -157,6 +159,7 @@ function Catalogue() {
             </div>
           )}
         </div>
+        {!loaded && <Loader />}
         {query != "" && (
           <div>
             {() => setBrand("")}
@@ -179,6 +182,9 @@ function Catalogue() {
                               .includes(query.toLowerCase()) &&
                             Brand.name == product.brand
                           ) {
+                            if(!loaded){
+                              setLoaded(true);
+                            }
                             if (!result) {
                               setResult(true);
                             }
@@ -198,6 +204,7 @@ function Catalogue() {
                         .map((product) => (
                           <div>
                             {() => setResult(true)}
+                            {() => setLoaded(true)}
                             {result && (
                               <Card
                                 brand={product.brand}
@@ -237,6 +244,9 @@ function Catalogue() {
             {products.length > 0 &&
               products
                 .filter((product) => {
+                  if(!loaded){
+                    setLoaded(true);
+                  }
                   if (brand === "") {
                     return product;
                   } else if (brand === product.brand) {
@@ -271,17 +281,20 @@ function Catalogue() {
                   }
                 })
                 .map((product) => (
-                  <Card
-                    brand={product.brand}
-                    name={product.name}
-                    price={product.price}
-                    image={product.image_link}
-                    link={product.product_link}
-                    description={product.description}
-                    rating={product.rating}
-                    currency={product.price_sign}
-                    id={product.id}
-                  />
+                  <div>
+                    {() => setLoaded(true)}
+                    <Card
+                      brand={product.brand}
+                      name={product.name}
+                      price={product.price}
+                      image={product.image_link}
+                      link={product.product_link}
+                      description={product.description}
+                      rating={product.rating}
+                      currency={product.price_sign}
+                      id={product.id}
+                    />
+                  </div>
                 ))}
           </div>
         )}
