@@ -1,16 +1,16 @@
-import Catalogue from "./Components/Catalogue/Catalogue";
-import Product from "./Components/Product/Product";
+import Catalogue from "./Components/Catalogue/Catalogue";//Importing Catalogue Component
+import Product from "./Components/Product/Product";//Importing Product Coomponent
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
-} from "react-router-dom";
+} from "react-router-dom"; //Importing Required items for Router Dom
 
 function App() {
   return (
     <div>
+      {/* Routing to home route by rendering Catalogue Component
+      Routing to individual products page using the Product Component and passing the product id */}
       <Router>
       <Switch>
         <Route exact path="/">
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;//Exporting APP
