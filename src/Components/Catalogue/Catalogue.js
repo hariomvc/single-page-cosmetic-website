@@ -138,6 +138,58 @@ function Catalogue() {
             </div>
           </div>
         )}
+        {query === "" && (
+          <div className="Catalogue--grid">
+            {products.length > 0 &&
+              products
+                .filter((product) => {
+                  if (brand === "") {
+                    return product;
+                  } else if (brand === product.brand) {
+                    return product;
+                  }
+                })
+                .sort((a, b) => {
+                  if (sorter == "price") {
+                    if (a.price < b.price) {
+                      return -1;
+                    }
+                    if (a.price > b.price) {
+                      return 1;
+                    }
+                    return 0;
+                  } else if (sorter == "rating") {
+                    if (a.rating > b.rating) {
+                      return -1;
+                    }
+                    if (a.rating < b.rating) {
+                      return 1;
+                    }
+                    return 0;
+                  } else {
+                    if (a.name < b.name) {
+                      return -1;
+                    }
+                    if (a.name > b.name) {
+                      return 1;
+                    }
+                    return 0;
+                  }
+                })
+                .map((product) => (
+                  <Card
+                    brand={product.brand}
+                    name={product.name}
+                    price={product.price}
+                    image={product.image_link}
+                    link={product.product_link}
+                    description={product.description}
+                    rating={product.rating}
+                    currency={product.price_sign}
+                  />
+                ))}
+          </div>
+        )}
       {/* {products.length > 0 &&
         products.map((product) => (
           <div>
