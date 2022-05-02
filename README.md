@@ -1,6 +1,11 @@
 # Single Page Cosmetic Shop
 A Simple Single Page Website for Cosmetic Store; Made with ReactJS.
 
+## Live Demo(Website) :
+[https://single-page-cosmetic-website.herokuapp.com/](https://single-page-cosmetic-website.herokuapp.com/)
+
+## Demo Video :
+[WebApp Demo](https://drive.google.com/file/d/1B2rDkFe_tAMj9Vg3_REym-RZIjKxF5vj/view?usp=sharing)
 
 
 
