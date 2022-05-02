@@ -1,0 +1,48 @@
+.Card--container {
+    border: 1px solid #9e9e9e;
+    margin: 0.6em;
+    height: 5em;
+    padding: 0.6em;
+    border-radius: 0.4em;
+    overflow: hidden;
+}
+
+.Card--container:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.01) translateY(-0.2em);
+}
+
+.Card--image {
+    height: 5em;
+    border-radius: 0.8em;
+    float: left;
+    padding-right: 0.5em;
+}
+
+.Card--detials {
+    overflow: hidden;
+}
+
+.Card--link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.Card--title {
+    font-weight: 600;
+}
+
+.Card--price {
+    font-weight: 400;
+    color: #676767;
+}
+
+.Card--rating {
+    font-weight: 400;
+    color: #767676;
+}
+
+.Card--description {
+    font-weight: 300;
+    color: #919191;
+}
