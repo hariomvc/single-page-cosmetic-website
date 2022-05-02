@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Single Page Cosmetic Shop
+A Simple Single Page Website for Cosmetic Store; Made with ReactJS.
+
+
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +75,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Authors
+
+- [Hariom Chaudhari](https://www.github.com/hariomvc)
